@@ -54,14 +54,14 @@ services:
         condition: any
 
   nginx:
-   image: nginx
+   image: nginx:1.23.4
    volumes:
    - ./nginx/ssl/self.cert:/etc/nginx/ssl/self.cert:ro
    - ./nginx/ssl/self-ssl.key:/etc/nginx/ssl/self-ssl.key:ro
    - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
    - ./nginx/mysite.template:/etc/nginx/conf.d/default.conf:ro
    ports:
-   - 8443:443
+   - 8080:443
    networks:
      guacnetwork_compose:
    command: /bin/bash -c "nginx -g 'daemon off;'"
