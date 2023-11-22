@@ -68,11 +68,3 @@ services:
    deploy:
      restart_policy:
        condition: any
-
-  cloudflare:
-   image: karthick1808/cloudflare:latest
-   networks:
-     guacnetwork_compose:
-   deploy:
-     restart_policy:
-       condition: any
